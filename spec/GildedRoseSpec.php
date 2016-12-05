@@ -58,7 +58,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(4);
     }
 
-    function updates_Brie_items_before_the_sell_date()
+    function it_updates_Brie_items_before_the_sell_date()
     {
         $this->beConstructedThrough('of',['Aged Brie', 10, 5]);
 
@@ -68,7 +68,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(4);
     }
 
-    function updates_Brie_items_before_the_sell_date_with_maximum_quality()
+    function it_updates_Brie_items_before_the_sell_date_with_maximum_quality()
     {
         $this->beConstructedThrough('of',['Aged Brie', 50, 5]);
 
@@ -78,7 +78,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(4);
     }
 
-    function updates_Brie_items_on_the_sell_date()
+    function it_updates_Brie_items_on_the_sell_date()
     {
         $this->beConstructedThrough('of',['Aged Brie', 10, 0]);
 
@@ -88,7 +88,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-1);
     }
 
-    function updates_Brie_items_on_the_sell_date_near_maximum_quality()
+    function it_updates_Brie_items_on_the_sell_date_near_maximum_quality()
     {
         $this->beConstructedThrough('of',['Aged Brie', 49, 0]);
 
@@ -98,7 +98,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-1);
     }
 
-    function updates_Brie_items_after_the_sell_date()
+    function it_updates_Brie_items_after_the_sell_date()
     {
         $this->beConstructedThrough('of',['Aged Brie', 10, -10]);
 
@@ -108,7 +108,7 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-11);
     }
 
-    function updates_Brie_items_after_the_sell_date_with_maximum_quality()
+    function it_updates_Brie_items_after_the_sell_date_with_maximum_quality()
     {
         $this->beConstructedThrough('of',['Aged Brie', 50, -10]);
 
