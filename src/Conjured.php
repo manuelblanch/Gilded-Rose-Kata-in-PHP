@@ -2,8 +2,15 @@
 
 namespace App;
 
+/**
+ * Class Conjured
+ * @package App
+ */
 class Conjured extends Item {
 
+    /**
+     *
+     */
     public function tick()
     {
         $this->sellIn -= 1;

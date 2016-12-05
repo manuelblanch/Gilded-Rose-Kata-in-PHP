@@ -13,7 +13,7 @@ class GildedRose
      */
     protected static $lookup = [
 
-        'normal' => Normal::class,
+        'Normal' => Normal::class,
         'Aged Brie' => Brie::class,
         'Backstage passes to a TAFKAL80ETC concert' => BackstagePass::class,
         'Conjured Mana Cake' => Conjured::class
@@ -45,11 +45,13 @@ class GildedRose
             : Item::class;
 
 
-        return new $class[$name]($quality, $sellIn);
+        return new $class($quality, $sellIn);
     }
 
-
-
+    public function tick()
+    {
+        // TODO: write logic here
+    }
 
 
 }

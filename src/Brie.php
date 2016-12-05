@@ -2,8 +2,15 @@
 
 namespace App;
 
+/**
+ * Class Brie
+ * @package App
+ */
 class Brie extends Item  {
 
+    /**
+     *
+     */
     public function tick()
     {
         $this->sellIn -= 1;

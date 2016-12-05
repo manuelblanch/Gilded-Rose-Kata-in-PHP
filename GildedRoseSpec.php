@@ -1,7 +1,11 @@
 <?php
+
 namespace spec\App;
+
 use App\GildedRose;
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
 /**
  * Class GildedRoseSpec
  * @package spec\App
@@ -9,28 +13,33 @@ use PhpSpec\ObjectBehavior;
 class GildedRoseSpec extends ObjectBehavior
 {
     /**
-     * Check it is initializable_normal_item
+     * Check it is initializable
      */
-    function it_is_initializable_normal_item()
+    function it_is_initializable()
     {
-        $this->beConstructedWith('of', ['Normal', 10, 5]);
+        $this->beConstructedWith('normal', 10, 5);
         $this->shouldHaveType(GildedRose::class);
     }
-    //Normal items Tests
+
     /**
-     *
+     * Check it updates normal items before sell date
      */
     function it_updates_normal_items_before_sell_date()
     {
-        $this->beConstructedThrough('of', ['Normal', 10, 5]);
+        $this->beConstructedWith('normal', 10, 5);
+
         $this->tick();
+
         $this->quality->shouldBe(9);
         $this->sellIn->shouldBe(4);
     }
 
+    /**
+     * Check it updates normal items on the sell date
+     */
     function it_updates_normal_items_on_the_sell_date()
     {
-        $this->beConstructedThrough('of',['Normal', 10, 0]);
+        $this->beConstructedWith('normal', 10, 0);
 
         $this->tick();
 
@@ -38,9 +47,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-1);
     }
 
-    function it_updates_normal_items_after_the_sell_date()
+    function updates_normal_items_after_the_sell_date()
     {
-        $this->beConstructedThrough('of',['Normal', 10, -5]);
+        $this->beConstructedWith('normal', 10, -5);
 
         $this->tick();
 
@@ -48,9 +57,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-6);
     }
 
-    function it_updates_normal_items_with_a_quality_of_0()
+    function updates_normal_items_with_a_quality_of_0()
     {
-        $this->beConstructedThrough('of',['Normal', 0, 5]);
+        $this->beConstructedWith('normal', 0, 5);
 
         $this->tick();
 
@@ -60,7 +69,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_before_the_sell_date()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 10, 5]);
+        $this->beConstructedWith('Aged Brie', 10, 5);
 
         $this->tick();
 
@@ -70,7 +79,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_before_the_sell_date_with_maximum_quality()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 50, 5]);
+        $this->beConstructedWith('Aged Brie', 50, 5);
 
         $this->tick();
 
@@ -80,7 +89,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_on_the_sell_date()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 10, 0]);
+        $this->beConstructedWith('Aged Brie', 10, 0);
 
         $this->tick();
 
@@ -90,7 +99,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_on_the_sell_date_near_maximum_quality()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 49, 0]);
+        $this->beConstructedWith('Aged Brie', 49, 0);
 
         $this->tick();
 
@@ -100,7 +109,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_after_the_sell_date()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 10, -10]);
+        $this->beConstructedWith('Aged Brie', 10, -10);
 
         $this->tick();
 
@@ -110,7 +119,7 @@ class GildedRoseSpec extends ObjectBehavior
 
     function updates_Brie_items_after_the_sell_date_with_maximum_quality()
     {
-        $this->beConstructedThrough('of',['Aged Brie', 50, -10]);
+        $this->beConstructedWith('Aged Brie', 50, -10);
 
         $this->tick();
 
@@ -298,5 +307,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-11);
     }
 
-
 }
+	
+
+
+    
+
