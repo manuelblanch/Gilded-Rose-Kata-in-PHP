@@ -2,8 +2,15 @@
 
 namespace App;
 
+/**
+ * Class BackstagePass
+ * @package App
+ */
 class BackstagePass extends Item  {
 
+    /**
+     * @return int|void
+     */
     public function tick()
     {
         $this->sellIn -= 1;
