@@ -118,9 +118,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(-11);
     }
 
-    function updates_Sulfuras_items_before_the_sell_date()
+    function it_updates_Sulfuras_items_before_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros', 10, 5);
+        $this->beConstructedThrough('of',['Sulfuras, Hand of Ragnaros', 10, 5]);
 
         $this->tick();
 
@@ -128,9 +128,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(5);
     }
 
-    function updates_Sulfuras_items_before_on_the_sell_date()
+    function it_updates_Sulfuras_items_before_on_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros', 10, 5);
+        $this->beConstructedThrough('of',['Sulfuras, Hand of Ragnaros', 10, 5]);
 
         $this->tick();
 
@@ -138,9 +138,9 @@ class GildedRoseSpec extends ObjectBehavior
         $this->sellIn->shouldBe(5);
     }
 
-    function updates_Sulfuras_items_after_the_sell_date()
+    function it_updates_Sulfuras_items_after_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros', 10, -1);
+        $this->beConstructedThrough('of',['Sulfuras, Hand of Ragnaros', 10, -1]);
 
         $this->tick();
 
