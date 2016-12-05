@@ -18,4 +18,6 @@ abstract class Item {
         $this->sellIn = $sellIn;
     }
 
+    abstract public function tick();
+
 }

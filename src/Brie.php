@@ -2,21 +2,7 @@
 
 namespace App;
 
-class Brie {
-
-    public $quality;
-
-    public $sellIn;
-
-
-    /**
-     * Normal constructor.
-     */
-    public function __construct($quality, $sellIn)
-    {
-        $this->quality = $quality;
-        $this->sellIn = $sellIn;
-    }
+class Brie extends Item  {
 
     public function tick()
     {

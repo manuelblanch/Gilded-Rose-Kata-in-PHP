@@ -2,9 +2,7 @@
 
 namespace App;
 
-class Normal {
-
-
+class Normal extends Item {
 
     public function tick()
     {
