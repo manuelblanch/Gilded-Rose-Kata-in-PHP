@@ -15,6 +15,7 @@ class GildedRose
 
         'Normal' => Normal::class,
         'Aged Brie' => Brie::class,
+        'Sulfuras' => Sulfuras::class,
         'Backstage passes to a TAFKAL80ETC concert' => BackstagePass::class,
         'Conjured Mana Cake' => Conjured::class
     ];
