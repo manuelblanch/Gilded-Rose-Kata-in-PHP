@@ -9,8 +9,6 @@ Your job is to:
 1. Refactor the monstrous code in the `GildedRose.php` class.
 2. Add a new item type, "Conjured". The specs for this item are commented out in the `GildedRoseSpec.php` file.
 
-When finished (or for help), you may review the solution by switching to the "solution" branch of this repo.
-
 ## Rules
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods. Unfortunately, our goods are constantly degrading in quality as they approach their sell by date. We have a system in place that updates our inventory for us. It was developed by a no-nonsense type named Leeroy, who has moved on to new adventures.
@@ -37,4 +35,20 @@ We have recently signed a supplier of conjured items. This requires an update to
 "Conjured" items degrade in Quality twice as fast as normal items
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+
+## Test PhpSpec
+
+To test with php Spec you need to do the following
+
+ $ composer install
+ 
+This install all the files for the composer.
+
+ $ composer require phpspec/phpspec
+ 
+This add phpspec to the composer.
+
+ $ phpspec run 
+ 
+This tests all the files.
 
