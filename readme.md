@@ -4,16 +4,19 @@
 
 To test with php Spec you need to do the following
 
+``` bash
  $ composer install
- 
+```
 This install all the files for the composer.
 
+``` bash
  $ composer require phpspec/phpspec
- 
+``` 
 This add phpspec to the composer.
 
- $ phpspec run 
- 
+``` bash
+  $ phpspec run 
+``` 
 This tests all the files.
 
 ## Setup
