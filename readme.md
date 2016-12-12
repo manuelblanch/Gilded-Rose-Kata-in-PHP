@@ -7,6 +7,9 @@ To test with php Spec you need to do the following
 ``` bash
  $ composer install
 ```
+``` bash
+ $ composer dumpautoload
+```
 This install all the files for the composer.
 
 ``` bash
