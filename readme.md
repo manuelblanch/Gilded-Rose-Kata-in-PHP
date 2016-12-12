@@ -1,5 +1,21 @@
 # The Gilded Rose Kata
 
+## Install and Test PhpSpec
+
+To test with php Spec you need to do the following
+
+ $ composer install
+ 
+This install all the files for the composer.
+
+ $ composer require phpspec/phpspec
+ 
+This add phpspec to the composer.
+
+ $ phpspec run 
+ 
+This tests all the files.
+
 ## Setup
 
 This repository includes the initial setup for this Kata, including the specs. It uses the [Kahlan library](http://kahlan.readthedocs.org/en/latest/), which you might not be familiar with. But, don't worry, there's nothing really to learn. Review the specs, and you'll understand the basic syntax in less than a minute.
@@ -36,19 +52,6 @@ We have recently signed a supplier of conjured items. This requires an update to
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 
-## Test PhpSpec
-
-To test with php Spec you need to do the following
-
- $ composer install
- 
-This install all the files for the composer.
-
- $ composer require phpspec/phpspec
- 
-This add phpspec to the composer.
-
- $ phpspec run 
  
 This tests all the files.
 
